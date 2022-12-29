@@ -4,7 +4,7 @@ import Auth from "../Routes/Auth";
 import Home from "../Routes/Home";
 
 const AppRouter = ({ isLoggedIns }) => {
-    const [isLoggedIn, setIsLoggedIn] = useState(true);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     return (
     <Router>
         <Routes>
@@ -13,7 +13,7 @@ const AppRouter = ({ isLoggedIns }) => {
                 ) : (
                     <Route exact path="/" element={<Auth/>} />
                 )
-            }
+            } 
         </Routes>
     </Router>
     );
