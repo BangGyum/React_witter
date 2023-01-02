@@ -27,6 +27,7 @@ const firebaseConfig = {
  // const authService =firebase.auth();
   const app = initializeApp(firebaseConfig);
   export const authService = getAuth(app);
-   export default authService;
+ // export const firebaseInstance = firebase;
+  export default authService;
   //const app = initializeApp(firebaseConfig);
   //export const authService = getAuth(app);
