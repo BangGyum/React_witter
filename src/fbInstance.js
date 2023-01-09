@@ -6,6 +6,7 @@ import { getAuth } from "firebase/auth";
 // import 'firebase/compat/auth';
 import firebase,{ initializeApp } from 'firebase/app';
 import 'firebase/compat/auth';
+import "firebase/database"
 
 //https://firebase.google.com/docs/reference/js/auth
 
@@ -31,3 +32,13 @@ const firebaseConfig = {
   export default authService;
   //const app = initializeApp(firebaseConfig);
   //export const authService = getAuth(app);
+  /*
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if
+          request.time < timestamp.date(2023, 2, 8);
+    }
+  }
+  */ 
