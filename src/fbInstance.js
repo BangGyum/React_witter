@@ -6,7 +6,9 @@ import { getAuth } from "firebase/auth";
 // import 'firebase/compat/auth';
 import firebase,{ initializeApp } from 'firebase/app';
 import 'firebase/compat/auth';
-import "firebase/database"
+import { getFirestore } from "firebase/firestore";
+//firebase의 db는 no sql로, 많은것들을 프로그램하지 않아도 되고, 유연함을 가지고 있다. 하지만 자유도가 높진 않음.
+//특징 : collection과 document가 있음. col은 폴더, doc은 문서같은 텍스트 => col은 doc을 가지고있음. 
 
 //https://firebase.google.com/docs/reference/js/auth
 
@@ -28,8 +30,11 @@ const firebaseConfig = {
  // const authService =firebase.auth();
   const app = initializeApp(firebaseConfig);
   export const authService = getAuth(app);
- // export const firebaseInstance = firebase;
+
   export default authService;
+  export const dbService = getFirestore();
+
+  // export const firebaseInstance = firebase;
   //const app = initializeApp(firebaseConfig);
   //export const authService = getAuth(app);
   /*
