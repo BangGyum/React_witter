@@ -41,7 +41,7 @@ const Home = ({userObj}) => {
     }, [])
     //https://firebase.google.com/docs/firestore/quickstart#web-version-9_3
     const onSubmit = async (event) => {
-        event.preventDefault();
+        event.preventDefault(); //submit과 동시에 창이 다시 실행되기 때문에 새로고침을 막는 것
         try {
         const docRef = await addDoc(collection(dbService, "bweets"), {//bweets 컬렉션에 다른 문서 추가.
         //bweet,
